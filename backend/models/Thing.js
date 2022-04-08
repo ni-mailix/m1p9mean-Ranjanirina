@@ -16,9 +16,3 @@ const ClientSchema = mongoose.Schema ({
 });
 
 module.exports = mongoose.model('Client', ClientSchema);
-
-
-
-
-
-
