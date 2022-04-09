@@ -1,4 +1,4 @@
-const Menu = require('../models/Thing');
+const Menu =  require('../models/Thing');
 const Client = require ('../models/Thing');
 const Commande = require ('../models/Thing');
 const Livraison = require ('../models/Thing');
@@ -6,10 +6,10 @@ const Livraison = require ('../models/Thing');
 ////////////////////////////  menu   /////////////////////
 exports.createMenu = (req, res, next) => {
     delete req.body._id;
-    const Menu = new Menu({
+    const Menu1 = new Menu({
         ...req.body
     });
-    Menu.save()
+    Menu1.save()
         .then(() => res.status(201).json({ message: 'menu enregistré !' }))
         .catch(error => res.status(400).json({ error }));
 };
@@ -41,10 +41,10 @@ exports.getToutMenu = (req, res, next) => {
 //////////////////////    client   ////////////////
 exports.createclient = (req, res, next) => {
     delete req.body._id;
-    const Client = new Client({
+    const Client1 = new Client({
         ...req.body
     });
-    Client.save()
+    Client1.save()
         .then(() => res.status(201).json({ message: 'Client enregistré !' }))
         .catch(error => res.status(400).json({ error }));
 };
@@ -76,10 +76,10 @@ exports.getToutClient = (req, res, next) => {
 ////////////////////////////  livraison   /////////////////////
 exports.createlivraison = (req, res, next) => {
     delete req.body._id;
-    const Livraison = new Livraison({
+    const Livraison1 = new Livraison({
         ...req.body
     });
-    Livraison.save()
+    Livraison1.save()
         .then(() => res.status(201).json({ message: 'livraison enregistré !' }))
         .catch(error => res.status(400).json({ error }));
 };
@@ -111,10 +111,10 @@ exports.getToutLivraison = (req, res, next) => {
 ////////////////////////////  Commande   /////////////////////
 exports.createCommande = (req, res, next) => {
     delete req.body._id;
-    const Commande = new Commande({
+    const Commande1 = new Commande({
         ...req.body
     });
-    Commande.save()
+    Commande1.save()
         .then(() => res.status(201).json({ message: 'Commande enregistré !' }))
         .catch(error => res.status(400).json({ error }));
 };

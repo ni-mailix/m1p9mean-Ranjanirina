@@ -6,7 +6,7 @@ const router = express.Router();
 const ekalyCtrl = require('../controllers/ekaly');
 
 /////////////////       route pour inserer un objet dans la base
-router.post('creationMenu/', ekalyCtrl.createMenu);
+router.post('/creationMenu/', ekalyCtrl.createMenu);
 
 /////////////// fin
 
@@ -26,36 +26,36 @@ router.get('/api/ekaly', (req, res, next) => {
 ////////////////////////// fin /////////////////////////////
 
 ///////////// route pour modifier l'objet Menu
-router.put('modifyMenu/:id', ekalyCtrl.modifyMenu);
+router.put('/modifyMenu/:id', ekalyCtrl.modifyMenu);
 
 ////////// route pour suppression des données
-router.delete('deleteMenu/:id', ekalyCtrl.deleteMenu);
+router.delete('/deleteMenu/:id', ekalyCtrl.deleteMenu);
 
 /////////////////    route pour récuperer et afficher les données enregistrées
-router.get('getMenuOne/:id', ekalyCtrl.getMenu);
+router.get('/getMenuOne/:id', ekalyCtrl.getMenu);
 
-router.get('getToutMenu/', ekalyCtrl.getToutMenu); 
+router.get('/getToutMenu/', ekalyCtrl.getToutMenu); 
 
 //////////// route client
-router.post('createClient/', ekalyCtrl.createclient);
-router.put('modifyClient/:id', ekalyCtrl.modifyClient);
+router.post('/createClient/', ekalyCtrl.createclient);
+router.put('/modifyClient/:id', ekalyCtrl.modifyClient);
 router.delete('deleteClient/:id', ekalyCtrl.deleteClient);
-router.get('getClient/:id', ekalyCtrl.getClient);
-router.get('getToutClient/', ekalyCtrl.getToutClient);
+router.get('/getClient/:id', ekalyCtrl.getClient);
+router.get('/getToutClient/', ekalyCtrl.getToutClient);
 
 //////////// route livraison
-router.post('createlivraison/', ekalyCtrl.createlivraison);
-router.put('modifyLivraison/:id', ekalyCtrl.modifyLivraison);
-router.delete('deleteLivraison/:id', ekalyCtrl.deleteLivraison);
-router.get('getLivraison/:id', ekalyCtrl.getLivraison);
-router.get('getToutLivraison/', ekalyCtrl.getToutLivraison);
+router.post('/createlivraison/', ekalyCtrl.createlivraison);
+router.put('/modifyLivraison/:id', ekalyCtrl.modifyLivraison);
+router.delete('/deleteLivraison/:id', ekalyCtrl.deleteLivraison);
+router.get('/getLivraison/:id', ekalyCtrl.getLivraison);
+router.get('/getToutLivraison/', ekalyCtrl.getToutLivraison);
 
 //////////// route commande
-router.post('createCommande/', ekalyCtrl.createCommande);
-router.put('modifyCommande/:id', ekalyCtrl.modifyCommande);
-router.delete('deleteCommande/:id', ekalyCtrl.deleteCommande);
-router.get('getCommande/:id', ekalyCtrl.getCommande);
-router.get('getToutCommande/', ekalyCtrl.getToutCommande);
+router.post('/createCommande/', ekalyCtrl.createCommande);
+router.put('/modifyCommande/:id', ekalyCtrl.modifyCommande);
+router.delete('/deleteCommande/:id', ekalyCtrl.deleteCommande);
+router.get('/getCommande/:id', ekalyCtrl.getCommande);
+router.get('/getToutCommande/', ekalyCtrl.getToutCommande);
 
 
 module.exports = router;
