@@ -1,5 +1,7 @@
 const Menu = require('../models/Thing');
 const Client = require ('../models/Thing');
+const Commande = require ('../models/Thing');
+const Livraison = require ('../models/Thing');
 
 ////////////////////////////  menu   /////////////////////
 exports.createMenu = (req, res, next) => {
@@ -68,5 +70,75 @@ exports.getClient = (req, res, next) => {
 exports.getToutClient = (req, res, next) => {
     Client.find()  //// methode pour trouver tous les objets
         .then(Client => res.status(200).json(Client))
+        .catch(error => res.status(400).json({ error }));
+};
+
+////////////////////////////  livraison   /////////////////////
+exports.createlivraison = (req, res, next) => {
+    delete req.body._id;
+    const Livraison = new Livraison({
+        ...req.body
+    });
+    Livraison.save()
+        .then(() => res.status(201).json({ message: 'livraison enregistré !' }))
+        .catch(error => res.status(400).json({ error }));
+};
+
+exports.modifyLivraison = (req, res, next) => {
+    Livraison.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+        .then(() => res.status(200).json({ message: 'Livraison modifié !' }))
+        .catch(error => res.status(400).json({ error }));
+};
+
+exports.deleteLivraison = (req, res, next) => {
+    Livraison.deleteOne({ _id: req.params.id })
+        .then(() => res.status(200).json({ message: 'Objet supprimé !' }))
+        .catch(error => res.status(400).json({ error }));
+};
+
+exports.getLivraison = (req, res, next) => {
+    Livraison.findOne({ _id: req.params.id })    //// methode pour trouver un objet
+        .then(Livraison => res.status(200).json(Livraison))
+        .catch(error => res.status(404).json({ error }));
+};
+
+exports.getToutLivraison = (req, res, next) => {
+    Livraison.find()  //// methode pour trouver tous les objets
+        .then(Livraison => res.status(200).json(Livraison))
+        .catch(error => res.status(400).json({ error }));
+};
+
+////////////////////////////  Commande   /////////////////////
+exports.createCommande = (req, res, next) => {
+    delete req.body._id;
+    const Commande = new Commande({
+        ...req.body
+    });
+    Commande.save()
+        .then(() => res.status(201).json({ message: 'Commande enregistré !' }))
+        .catch(error => res.status(400).json({ error }));
+};
+
+exports.modifyCommande = (req, res, next) => {
+    Commande.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+        .then(() => res.status(200).json({ message: 'Objet modifié !' }))
+        .catch(error => res.status(400).json({ error }));
+};
+
+exports.deleteCommande = (req, res, next) => {
+    Commande.deleteOne({ _id: req.params.id })
+        .then(() => res.status(200).json({ message: 'Objet supprimé !' }))
+        .catch(error => res.status(400).json({ error }));
+};
+
+exports.getCommande = (req, res, next) => {
+    Commande.findOne({ _id: req.params.id })    //// methode pour trouver un objet
+        .then(Commande => res.status(200).json(Commande))
+        .catch(error => res.status(404).json({ error }));
+};
+
+exports.getToutCommande = (req, res, next) => {
+    Commande.find()  //// methode pour trouver tous les objets
+        .then(Commande => res.status(200).json(Commande))
         .catch(error => res.status(400).json({ error }));
 };

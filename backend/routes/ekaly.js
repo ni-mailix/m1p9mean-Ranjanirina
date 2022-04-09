@@ -37,11 +37,25 @@ router.get('getMenuOne/:id', ekalyCtrl.getMenu);
 router.get('getToutMenu/', ekalyCtrl.getToutMenu); 
 
 //////////// route client
-router.post('/', ekalyCtrl.createclient);
-router.put('/:id', ekalyCtrl.modifyClient);
-router.delete('/:id', ekalyCtrl.deleteClient);
-router.get('/:id', ekalyCtrl.getClient);
-router.get('/', ekalyCtrl.getToutClient);
+router.post('createClient/', ekalyCtrl.createclient);
+router.put('modifyClient/:id', ekalyCtrl.modifyClient);
+router.delete('deleteClient/:id', ekalyCtrl.deleteClient);
+router.get('getClient/:id', ekalyCtrl.getClient);
+router.get('getToutClient/', ekalyCtrl.getToutClient);
+
+//////////// route livraison
+router.post('createlivraison/', ekalyCtrl.createlivraison);
+router.put('modifyLivraison/:id', ekalyCtrl.modifyLivraison);
+router.delete('deleteLivraison/:id', ekalyCtrl.deleteLivraison);
+router.get('getLivraison/:id', ekalyCtrl.getLivraison);
+router.get('getToutLivraison/', ekalyCtrl.getToutLivraison);
+
+//////////// route commande
+router.post('createCommande/', ekalyCtrl.createCommande);
+router.put('modifyCommande/:id', ekalyCtrl.modifyCommande);
+router.delete('deleteCommande/:id', ekalyCtrl.deleteCommande);
+router.get('getCommande/:id', ekalyCtrl.getCommande);
+router.get('getToutCommande/', ekalyCtrl.getToutCommande);
 
 
 module.exports = router;
