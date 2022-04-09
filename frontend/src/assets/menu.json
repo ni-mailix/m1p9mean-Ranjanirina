@@ -1,0 +1,14 @@
+[
+	{
+		"id_menu": "1",
+	  	"nom_menu": "fond-fromage",
+	  	"img_menu" : "fond-fromage.jpg",
+	  	"prix_menu" : "15"
+	},
+	{
+		"id_menu": "3",
+	  	"nom_menu": "Ragout d'agneau",
+	  	"img_menu" : "ragout-d-agneau.jpg",
+	  	"prix_menu" : "26"
+	}
+]

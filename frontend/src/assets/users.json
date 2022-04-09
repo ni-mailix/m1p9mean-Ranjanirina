@@ -1,0 +1,7 @@
+{
+	"id_user": 1,
+  	"nom": "Toto",
+  	"login" : "toto",
+  	"password" : "toto",
+  	"type" : "client"
+}

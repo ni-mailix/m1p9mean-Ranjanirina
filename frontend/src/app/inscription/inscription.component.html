@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Iscription</h5>
+            <div class="alert alert-danger" role="alert" *ngIf="messageError != ''">
+              {{messageError}}
+            </div>
+
+            <div class="alert alert-danger" role="alert" *ngIf="resSaveNewUSer == true">
+              Utilisateur enregistré
+            </div>
+
+            <form>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="nom" placeholder="login" [(ngModel)]="user.nom" name="nom" required >
+                <label for="nom">Nom</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="tel" placeholder="login" [(ngModel)]="user.tel" name="tel" required >
+                <label for="tel">Tel</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="login" [(ngModel)]="user.login" name="login" required >
+                <label for="floatingInput">Login</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="user.password"  name="password" required >
+                <label for="floatingPassword">Password</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" [(ngModel)]="confirmPassword"  name="confirmPassword" required >
+                <label for="confirmPassword">Confirm Password</label>
+              </div>
+
+              <div class="d-grid">
+                <button class="btn btn-pripasswordmary btn-login text-uppercase fw-bold" type="submit" (click)="saveInscription()">Enregistrer</button>
+               	<button class="btn btn-pripasswordmary btn-login text-uppercase fw-bold" type="submit" routerLink="/login">Se Connecter</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

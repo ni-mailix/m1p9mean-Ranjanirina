@@ -1,0 +1,21 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div class="container">
+	<div class="row" *ngIf="menus">
+		<div class="card col-sm-4" style="margin: 10px; width: 18rem;" *ngFor="let menu of menus">
+		  <img src="../assets/img/{{menu.img_menu}}" class="card-img-top" alt="test">
+		  <div class="card-body">
+		    <h5 class="card-title">{{menu.nom_menu}}</h5>
+		    <p>
+		    	<label class="card-text">Prix :</label> {{menu.prix_menu}}
+		    </p>
+
+		    <p class="row">
+		    	<label class="card-text col-sm-5">Quantité:</label>
+	    	  	<input type="number" class="form-control-sm col-sm-4" id="qte" name="qte"  [(ngModel)]="quantiteACommander[menu.id_menu]">
+		    </p>
+		    <a class="btn btn-primary" (click)="addCommand(menu)">Ajouter au command</a>
+		  </div>
+	  	</div>
+	</div>  	
+</div>

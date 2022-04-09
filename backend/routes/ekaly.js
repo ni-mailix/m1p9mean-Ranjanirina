@@ -6,7 +6,7 @@ const router = express.Router();
 const ekalyCtrl = require('../controllers/ekaly');
 
 /////////////////       route pour inserer un objet dans la base
-router.post('/', ekalyCtrl.createMenu);
+router.post('creationMenu/', ekalyCtrl.createMenu);
 
 /////////////// fin
 
@@ -26,15 +26,15 @@ router.get('/api/ekaly', (req, res, next) => {
 ////////////////////////// fin /////////////////////////////
 
 ///////////// route pour modifier l'objet Menu
-router.put('/:id', ekalyCtrl.modifyMenu);
+router.put('modifyMenu/:id', ekalyCtrl.modifyMenu);
 
 ////////// route pour suppression des données
-router.delete('/:id', ekalyCtrl.deleteMenu);
+router.delete('deleteMenu/:id', ekalyCtrl.deleteMenu);
 
 /////////////////    route pour récuperer et afficher les données enregistrées
-router.get('/:id', ekalyCtrl.getMenu);
+router.get('getMenuOne/:id', ekalyCtrl.getMenu);
 
-router.get('/', ekalyCtrl.getToutMenu); 
+router.get('getToutMenu/', ekalyCtrl.getToutMenu); 
 
 //////////// route client
 router.post('/', ekalyCtrl.createclient);
