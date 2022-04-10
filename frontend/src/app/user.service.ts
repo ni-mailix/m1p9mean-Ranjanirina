@@ -11,8 +11,8 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {
-	//private userUrl = 'api/users';
-	private userUrl = 'assets/users.json';
+	private userUrl = 'api/users';
+	//private userUrl = 'assets/users.json';
 	httpOptions = {
 	  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 	};
