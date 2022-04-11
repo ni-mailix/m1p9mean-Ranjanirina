@@ -7,6 +7,8 @@ import { UserService } from '../user.service';
   templateUrl: './inscription.component.html',
   styleUrls: ['./inscription.component.css']
 })
+
+
 export class InscriptionComponent implements OnInit {
   	confirmPassword ?: string;
     messageError?: string = '';
@@ -15,9 +17,9 @@ export class InscriptionComponent implements OnInit {
   	constructor(private userService : UserService) { 
   		this.user = {
 	    	id_user: 0,
+        tel:'',
 		  	nom: '',
 		  	login: '',
-		  	tel : '',
 		  	password: '',
 		  	type: ''
 	  	};
@@ -41,3 +43,8 @@ export class InscriptionComponent implements OnInit {
     
   }
 }
+/*
+function newFunction() {
+  [UserService];
+}
+*/

@@ -11,7 +11,8 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {
-	private userUrl = 'api/users';
+	private userUrl = 'http://localhost:3000/api/ekaly';
+	//private userUrl = '/user';
 	//private userUrl = 'assets/users.json';
 	httpOptions = {
 	  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -27,7 +28,7 @@ export class UserService {
     }
 
 	saveInscription(user:User) :Observable<boolean> {
-  		return this.http.post<boolean>(this.userUrl+'/saveUser', user, this.httpOptions)
+  		return this.http.post<boolean>(this.userUrl+'/createClient', user, this.httpOptions)
     	.pipe(
     	);
     }	

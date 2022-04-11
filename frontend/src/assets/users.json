@@ -1,6 +1,7 @@
 {
 	"id_user": 1,
   	"nom": "Toto",
+	  "tel":"0341122233",
   	"login" : "toto",
   	"password" : "toto",
   	"type" : "client"
