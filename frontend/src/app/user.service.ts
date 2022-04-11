@@ -23,7 +23,7 @@ export class UserService {
 
    	getUser(): Observable<User> {
   		//return this.http.get<User>(this.userUrl+'/getUser')
-  		return this.http.get<User>(this.userUrl+'getClient')
+  		return this.http.get<User>(this.userUrl+'/getClient')
     	.pipe(
     	);
     }
