@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -11,18 +11,19 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {
-	private userUrl = 'http://localhost:3000/api/ekaly';
+	//private userUrl = 'http://localhost:3000/api/ekaly';
+	public userUrl = 'http://localhost:3000/api/ekaly';
 	//private userUrl = '/user';
 	//private userUrl = 'assets/users.json';
 	httpOptions = {
 	  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 	};
-
+ 
     constructor(private http: HttpClient) { }
 
    	getUser(): Observable<User> {
   		//return this.http.get<User>(this.userUrl+'/getUser')
-  		return this.http.get<User>(this.userUrl)
+  		return this.http.get<User>(this.userUrl+'getClient')
     	.pipe(
     	);
     }

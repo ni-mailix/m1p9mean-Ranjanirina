@@ -75,6 +75,12 @@
               "browserTarget": "Ekaly2:build:development"
             }
           },
+          ////////////// ajout 11/04/2022 -- 20:37
+          "options": {
+            "browserTarget": "your-application-name:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
+          //////////      fin
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -83,6 +89,7 @@
             "browserTarget": "Ekaly2:build"
           }
         },
+       
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {

@@ -28,6 +28,11 @@ app.use((req, res) => {
  });
 */
 
+
+const cors = require('cors');
+app.use(cors());
+
+
 ///////////// methode CORS qui permet de communiquer 2 port différents dans l'appli   //////////////
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -51,3 +56,4 @@ app.post('/api/ekaly', (req, res, next) => {
 app.use('/api/auth', userRoutes);  /// utilisation de la racine d'authentification de front end
 
 module.exports = app; //// export de app pour qu'il puisse être utilisé
+
