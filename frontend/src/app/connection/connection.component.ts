@@ -15,7 +15,7 @@ export class ConnectionComponent implements OnInit {
     connected ?:boolean;
   	constructor(private userService : UserService, private router: Router) { 
   		this.user = {
-	    	id_user: 0,
+	    //	id_user: 0,
 		  	nom: '',
 		  	tel : '',
 		  	login: '',

@@ -16,7 +16,7 @@ export class InscriptionComponent implements OnInit {
   	user: User;
   	constructor(private userService : UserService) { 
   		this.user = {
-	    	id_user: 0,
+	    //	id_user: 0,
         tel:'',
 		  	nom: '',
 		  	login: '',
