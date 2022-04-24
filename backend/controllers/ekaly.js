@@ -46,7 +46,7 @@ exports.createclient = (req, res, next) => {
     });
     Client1.save()
         .then(() => res.status(201).json({ message: 'Client enregistré !' }))
-        .catch(error => res.status(400).json({ error }));
+        .catch(error => res.status(400).json({ error, message :'misy erreur' }));
 };
 
 exports.modifyClient = (req, res, next) => {

@@ -3,6 +3,9 @@ const express = require('express');  //// importation
 const mongoose = require('mongoose'); // importation du package mongoose qui crée et facilite la connexion avec la base de données mongoDB
 const bodyParser = require('body-parser');
 const app = express(); //// affectation du constante app avec la valeur de la variable express()
+const cors = require('cors');
+
+
 const userRoutes = require('./routes/user');
 
 const ekalyRoutes = require('./routes/ekaly');
@@ -29,11 +32,12 @@ app.use((req, res) => {
 */
 
 
-const cors = require('cors');
-app.use(cors());
+
 
 
 ///////////// methode CORS qui permet de communiquer 2 port différents dans l'appli   //////////////
+app.use(cors());
+
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
