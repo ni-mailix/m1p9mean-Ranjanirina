@@ -29,7 +29,7 @@ exports.deleteMenu = (req, res, next) => {
 exports.getMenu = (req, res, next) => {
     Menu.findOne({ _id: req.params.id })    //// methode pour trouver un objet
         .then(Menu => res.status(200).json(Menu))
-        .catch(error => res.status(404).json({ error }));
+        .catch(error => res.status(404).json({ error }) );
 };
 
 exports.getToutMenu = (req, res, next) => {
@@ -40,6 +40,7 @@ exports.getToutMenu = (req, res, next) => {
 
 //////////////////////    client   ////////////////
 exports.createclient = (req, res, next) => {
+
     delete req.body._id;
     const Client1 = new Client({
         ...req.body
@@ -47,6 +48,7 @@ exports.createclient = (req, res, next) => {
     Client1.save()
         .then(() => res.status(201).json({ message: 'Client enregistré !' }))
         .catch(error => res.status(400).json({ error, message :'misy erreur' }));
+
 };
 
 exports.modifyClient = (req, res, next) => {

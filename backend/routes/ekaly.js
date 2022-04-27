@@ -37,7 +37,7 @@ router.get('/getMenuOne/:id', ekalyCtrl.getMenu);
 router.get('/getToutMenu/', ekalyCtrl.getToutMenu); 
 
 //////////// route client
-router.post('/createClient/', ekalyCtrl.createclient);
+router.post('/createClient', ekalyCtrl.createclient);
 router.put('/modifyClient/:id', ekalyCtrl.modifyClient);
 router.delete('deleteClient/:id', ekalyCtrl.deleteClient);
 router.get('/getClient/:id', ekalyCtrl.getClient);

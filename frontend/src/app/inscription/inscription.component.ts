@@ -25,18 +25,18 @@ export class InscriptionComponent implements OnInit {
 	  	};
 	}
 
-  ngOnInit(): void {
+  ngOnInit(): void  {
   }
 
   saveInscription(): void {
     if(this.user.password != "" && this.confirmPassword != "" && this.user.password == this.confirmPassword) {
-      this.user.type = "client";
+      //this.user.type = "client";
       this.userService.saveInscription(this.user)
       .subscribe({
           error: (err: Error) =>  this.messageError = "Erreur sur l'enregistrement",
           complete: () => this.resSaveNewUSer = true,
-      });
-
+      }); 
+ 
     } else {
       this.messageError = "Veuillez verifier le mot passe";
     }

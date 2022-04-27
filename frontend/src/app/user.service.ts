@@ -11,12 +11,9 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {
-	//private userUrl = 'http://localhost:3000/api/ekaly';
-	public userUrl = 'http://localhost:3000/api/ekaly';
-	//private userUrl = '/user';
-	//private userUrl = 'assets/users.json';
+	public   userUrl= 'http://localhost:3000/api/ekaly';
 	httpOptions = {
-	  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+	 //headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 	};
  
     constructor(private http: HttpClient) { }
@@ -29,8 +26,9 @@ export class UserService {
     }
 
 	saveInscription(user:User) :Observable<boolean> {
-  		return this.http.post<boolean>(this.userUrl+'/createClient', user, this.httpOptions)
+  		return this.http.post<boolean>(this.userUrl+'/signup', user, this.httpOptions)
+		//  return this.http.post<boolean>(this.userUrl+'/signup', user, this.httpOptions)
     	.pipe(
-    	);
+    	); 
     }	
 }

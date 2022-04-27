@@ -1,6 +1,6 @@
 {
-    "*/api/ekaly*": {
-        "target": "http://localhost:4200/api/ekaly",
+    "*/api/*": {
+        "target": "http://localhost:4200",
         "secure": false,
         "changeOrigin": true,
   "pathRewrite": {
